@@ -1,11 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reverse String</title>    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reverse String</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 24px;
+      line-height: 1.4;
+      display: grid;
+      place-items: start center;
+    }
+
+    .card {
+      width: min(680px, 100%);
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 12px;
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    h1 {
+      font-size: 1.25rem;
+      margin: 0 0 12px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+      align-items: stretch;
+      flex-wrap: wrap;
+    }
+
+    input[type="text"] {
+      flex: 1 1 320px;
+      padding: 10px 12px;
+      font-size: 1rem;
+      border-radius: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      outline: none;
+    }
+
+    input[type="text"]:focus {
+      border-color: rgba(0, 0, 0, 0.45);
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+    }
+
+    button {
+      flex: 0 0 auto;
+      padding: 10px 14px;
+      font-size: 1rem;
+      border-radius: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      background: rgba(0, 0, 0, 0.06);
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: rgba(0, 0, 0, 0.10);
+    }
+
+    button:active {
+      transform: translateY(1px);
+    }
+
+    .hint {
+      margin: 10px 0 0;
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+
+    .result {
+      margin-top: 14px;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px dashed rgba(0, 0, 0, 0.25);
+      background: rgba(0, 0, 0, 0.03);
+      word-break: break-word;
+      white-space: pre-wrap;
+      min-height: 44px; /* keeps area visible even with empty result */
+    }
+
+    .result-title {
+      margin: 0 0 6px;
+      font-weight: 600;
+    }
+  </style>
 </head>
 <body>
-<script src="script.js"></script>
+  <main class="card" aria-labelledby="page-title">
+    <h1 id="page-title">Reverse String</h1>
+
+    <label for="textInput">Enter text</label>
+    <div class="row">
+      <input
+        id="textInput"
+        type="text"
+        placeholder='Example: AI4Devs'
+        autocomplete="off"
+        aria-describedby="inputHint"
+      />
+      <button id="reverseBtn" type="button">Reverse</button>
+    </div>
+    <p id="inputHint" class="hint">
+      Tip: You can also press <strong>Enter</strong> to reverse.
+    </p>
+
+    <section aria-live="polite" aria-atomic="true" class="result">
+      <p class="result-title">Result</p>
+      <div id="output"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
